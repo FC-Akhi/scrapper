@@ -13,13 +13,13 @@ application = Flask(__name__) # initialize and define entry point
 
 
 # search page route
-@app.route("/", methods = ["GET"]) # home route
+@application.route("/", methods = ["GET"]) # home route
 def homepage():
 
     return render_template("index.html")
 
 
-@app.route("/review" , methods = ['POST' , 'GET'])
+@application.route("/review" , methods = ['POST' , 'GET'])
 def index():
     if request.method == 'POST':
         try:
@@ -96,3 +96,5 @@ def index():
 if __name__ == "__main__":
 
     application.run(host = "0.0.0.0", port = 5000)
+
+
